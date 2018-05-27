@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		080B812920BAEE3F00F38A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B812820BAEE3F00F38A71 /* AppDelegate.swift */; };
-		080B812B20BAEE3F00F38A71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B812A20BAEE3F00F38A71 /* ViewController.swift */; };
+		080B812B20BAEE3F00F38A71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B812A20BAEE3F00F38A71 /* HomeViewController.swift */; };
 		080B812E20BAEE3F00F38A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080B812C20BAEE3F00F38A71 /* Main.storyboard */; };
 		080B813020BAEE4100F38A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080B812F20BAEE4100F38A71 /* Assets.xcassets */; };
 		080B813320BAEE4100F38A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */; };
+		080B813B20BAF9F300F38A71 /* BlockedIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B813A20BAF9F300F38A71 /* BlockedIngredientsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		080B812520BAEE3F00F38A71 /* CanWeEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanWeEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		080B812820BAEE3F00F38A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		080B812A20BAEE3F00F38A71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		080B812A20BAEE3F00F38A71 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		080B812D20BAEE3F00F38A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		080B812F20BAEE4100F38A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		080B813220BAEE4100F38A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		080B813420BAEE4100F38A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		080B813A20BAF9F300F38A71 /* BlockedIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredientsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				080B812820BAEE3F00F38A71 /* AppDelegate.swift */,
-				080B812A20BAEE3F00F38A71 /* ViewController.swift */,
+				080B812A20BAEE3F00F38A71 /* HomeViewController.swift */,
+				080B813A20BAF9F300F38A71 /* BlockedIngredientsViewController.swift */,
 				080B812C20BAEE3F00F38A71 /* Main.storyboard */,
 				080B812F20BAEE4100F38A71 /* Assets.xcassets */,
 				080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */,
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				080B812B20BAEE3F00F38A71 /* ViewController.swift in Sources */,
+				080B813B20BAF9F300F38A71 /* BlockedIngredientsViewController.swift in Sources */,
+				080B812B20BAEE3F00F38A71 /* HomeViewController.swift in Sources */,
 				080B812920BAEE3F00F38A71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.mar.CanWeEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.mar.CanWeEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
