@@ -13,6 +13,8 @@
 		080B813020BAEE4100F38A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080B812F20BAEE4100F38A71 /* Assets.xcassets */; };
 		080B813320BAEE4100F38A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */; };
 		080B813D20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */; };
+		082AB2E820BB27D500F7349E /* BlockedIngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */; };
+		47F9E3B8EEBC47AA905B073C /* Pods_CanWeEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		080B813220BAEE4100F38A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		080B813420BAEE4100F38A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredientsTableViewController.swift; sourceTree = "<group>"; };
+		082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredientsData.swift; sourceTree = "<group>"; };
+		102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanWeEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat.release.xcconfig"; sourceTree = "<group>"; };
+		CE903EFE03FBD5929D18E301 /* Pods-CanWeEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanWeEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat.debug.xcconfig"; sourceTree = "<group>"; };
+		EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanWeEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F9E3B8EEBC47AA905B073C /* Pods_CanWeEat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				080B812720BAEE3F00F38A71 /* CanWeEat */,
 				080B812620BAEE3F00F38A71 /* Products */,
+				5E41D344203959B1C37EB770 /* Pods */,
+				ECF128D27410B58EA9B5CCF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +66,64 @@
 			isa = PBXGroup;
 			children = (
 				080B812820BAEE3F00F38A71 /* AppDelegate.swift */,
-				080B812A20BAEE3F00F38A71 /* HomeViewController.swift */,
-				080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */,
-				080B812C20BAEE3F00F38A71 /* Main.storyboard */,
-				080B812F20BAEE4100F38A71 /* Assets.xcassets */,
-				080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */,
+				082AB2E920BB27DC00F7349E /* Model */,
+				082AB2EA20BB27E900F7349E /* Controller */,
+				082AB2EC20BB284400F7349E /* View */,
+				082AB2EB20BB283500F7349E /* Supporting Files */,
 				080B813420BAEE4100F38A71 /* Info.plist */,
 			);
 			path = CanWeEat;
+			sourceTree = "<group>";
+		};
+		082AB2E920BB27DC00F7349E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		082AB2EA20BB27E900F7349E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				080B812A20BAEE3F00F38A71 /* HomeViewController.swift */,
+				080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		082AB2EB20BB283500F7349E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				080B812F20BAEE4100F38A71 /* Assets.xcassets */,
+				080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		082AB2EC20BB284400F7349E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				080B812C20BAEE3F00F38A71 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E41D344203959B1C37EB770 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE903EFE03FBD5929D18E301 /* Pods-CanWeEat.debug.xcconfig */,
+				102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECF128D27410B58EA9B5CCF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 080B813720BAEE4100F38A71 /* Build configuration list for PBXNativeTarget "CanWeEat" */;
 			buildPhases = (
+				1D334AD7DF4E46A5D649971B /* [CP] Check Pods Manifest.lock */,
 				080B812120BAEE3F00F38A71 /* Sources */,
 				080B812220BAEE3F00F38A71 /* Frameworks */,
 				080B812320BAEE3F00F38A71 /* Resources */,
+				C29894389D93F845B020E680 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +194,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D334AD7DF4E46A5D649971B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CanWeEat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C29894389D93F845B020E680 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		080B812120BAEE3F00F38A71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				080B812B20BAEE3F00F38A71 /* HomeViewController.swift in Sources */,
+				082AB2E820BB27D500F7349E /* BlockedIngredientsData.swift in Sources */,
 				080B812920BAEE3F00F38A71 /* AppDelegate.swift in Sources */,
 				080B813D20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift in Sources */,
 			);
@@ -282,6 +387,7 @@
 		};
 		080B813820BAEE4100F38A71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE903EFE03FBD5929D18E301 /* Pods-CanWeEat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +406,7 @@
 		};
 		080B813920BAEE4100F38A71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
