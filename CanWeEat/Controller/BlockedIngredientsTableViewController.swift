@@ -28,6 +28,7 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath)
         cell.textLabel?.text = ingredientsData.data[indexPath.row]
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
