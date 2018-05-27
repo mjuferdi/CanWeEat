@@ -83,6 +83,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="m16-5N-OOX"/>
+                    <connections>
+                        <outlet property="backgroundHome" destination="vWV-Ep-omz" id="FpR-f3-dWI"/>
+                        <outlet property="barcodeScanButton" destination="Sv2-24-Hfa" id="oi6-0K-Oer"/>
+                        <outlet property="blockedIngredientsButton" destination="4Pb-W0-VRl" id="Zl5-qh-0Fd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

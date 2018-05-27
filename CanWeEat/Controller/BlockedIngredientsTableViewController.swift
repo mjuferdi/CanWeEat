@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class BlockedIngredientsTableViewController: UITableViewController, UISearchBarDelegate {
 
-    var blockedIngredients = ["Alcohol","B2B","Gelatine"]
     let baseURL = "https://api.mjuan.info/product/haram"
     let ingredientsData = BlockedIngredientsData()
 
