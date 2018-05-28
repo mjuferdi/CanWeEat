@@ -10,4 +10,5 @@ import Foundation
 
 class BlockedIngredientsData {
     var data = [String]()
+    var filteredData = [String]()
 }

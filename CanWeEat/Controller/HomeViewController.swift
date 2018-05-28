@@ -20,6 +20,14 @@ class HomeViewController: UIViewController {
         updateUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        let img = UIImage()
+        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller does not exist")}
+        navBar.isTranslucent = true
+        navBar.shadowImage = img
+        navBar.setBackgroundImage(img, for: .default)
+    }
+    
     func updateUI() {
         let colors: [UIColor] = [
             UIColor.flatOrange,
@@ -27,9 +35,6 @@ class HomeViewController: UIViewController {
         ]
         
         view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            navigationController?.navigationBar.shadowImage = UIImage()
         backgroundHome.layer.cornerRadius = 10.0
         backgroundHome.layer.masksToBounds = true
         blockedIngredientsButton.layer.cornerRadius = 25.0
@@ -37,7 +42,9 @@ class HomeViewController: UIViewController {
         barcodeScanButton.layer.cornerRadius = 25.0
         barcodeScanButton.layer.masksToBounds = true
     }
+    
     @IBAction func showIngredientsButton(_ sender: UIButton) {
+    
     }
     
 }
