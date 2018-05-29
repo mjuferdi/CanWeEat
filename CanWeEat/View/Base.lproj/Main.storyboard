@@ -72,7 +72,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="q1U-TT-q6w" kind="show" identifier="goToScanner" id="Sq4-rP-dwd"/>
+                                            <segue destination="q1U-TT-q6w" kind="show" identifier="goToProduct" id="Sq4-rP-dwd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -130,16 +130,16 @@
             </objects>
             <point key="canvasLocation" x="2092" y="-285"/>
         </scene>
-        <!--Scanner View Controller-->
+        <!--Product Info View Controller-->
         <scene sceneID="IAR-wQ-q0s">
             <objects>
-                <viewController title="Scanner View Controller" id="q1U-TT-q6w" sceneMemberID="viewController">
+                <viewController title="Product Info View Controller" id="q1U-TT-q6w" customClass="ProductInfoViewController" customModule="CanWeEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Isx-be-GZj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-gV-SKt">
-                                <rect key="frame" x="155" y="302" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product info detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-gV-SKt">
+                                <rect key="frame" x="117" y="323" width="140" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -149,11 +149,32 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GFY-eJ-ORT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scanner" id="uPt-zL-cJq"/>
+                    <navigationItem key="navigationItem" title="Product Information" id="uPt-zL-cJq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bar-code" id="8FT-gy-mjK">
+                            <connections>
+                                <segue destination="Shn-Mm-aKx" kind="show" id="csZ-Hj-DWC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKu-XV-KbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2117.5999999999999" y="413.3433283358321"/>
+        </scene>
+        <!--Barcode Reader View Controller-->
+        <scene sceneID="9ns-kz-Wd3">
+            <objects>
+                <viewController id="Shn-Mm-aKx" customClass="BarcodeReaderViewController" customModule="CanWeEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZdF-CG-j07">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oSu-Kk-hkq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2de-tF-73u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2868" y="413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rak-Jq-9e5">
@@ -177,4 +198,7 @@
             <point key="canvasLocation" x="127.2" y="-64.31784107946028"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bar-code" width="30" height="30"/>
+    </resources>
 </document>
