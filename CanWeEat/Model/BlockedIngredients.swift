@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BlockedIngredientsData {
+class BlockedIngredients {
     var data = [String]()
     var filteredData = [String]()
 }

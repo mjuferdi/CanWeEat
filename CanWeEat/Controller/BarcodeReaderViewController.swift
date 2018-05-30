@@ -14,9 +14,11 @@ import ChameleonFramework
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    let baseUrl = "https://api.mjuan.info/product/"
+
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    let baseUrl = "https://api.mjuan.info/product/"
+    var product = Product()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,10 +138,25 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
         Alamofire.request(url, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
                 print("Success! Got the product information")
-                print(response)
+                let productInfoJSON: JSON = JSON(response.result.value!)
+                //print(productInfoJSON)
+                self.updateProductInformation(json: productInfoJSON)
             } else {
                 print("Error: \(String(describing: response.result.error))")
             }
+        }
+    }
+    
+    func updateProductInformation(json: JSON) {
+        if let productInfo = json["status"].string {
+            product.status = productInfo
+            product.title = json["title"].stringValue
+            product.ingredient = json["ingredient"].stringValue
+            print(product.status)
+            print(product.title)
+            print(product.ingredient)
+        } else {
+            print("Information unavailable")
         }
     }
     

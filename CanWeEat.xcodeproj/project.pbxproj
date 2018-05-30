@@ -13,7 +13,8 @@
 		080B813020BAEE4100F38A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080B812F20BAEE4100F38A71 /* Assets.xcassets */; };
 		080B813320BAEE4100F38A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */; };
 		080B813D20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */; };
-		082AB2E820BB27D500F7349E /* BlockedIngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */; };
+		08200AF820BECF40004C22E5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08200AF720BECF40004C22E5 /* Product.swift */; };
+		082AB2E820BB27D500F7349E /* BlockedIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AB2E720BB27D500F7349E /* BlockedIngredients.swift */; };
 		0836E13B20BDD3970084266C /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0836E13A20BDD3970084266C /* ProductInfoViewController.swift */; };
 		0836E13D20BDD82F0084266C /* BarcodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0836E13C20BDD82F0084266C /* BarcodeReaderViewController.swift */; };
 		47F9E3B8EEBC47AA905B073C /* Pods_CanWeEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */; };
@@ -28,7 +29,8 @@
 		080B813220BAEE4100F38A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		080B813420BAEE4100F38A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		080B813C20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredientsTableViewController.swift; sourceTree = "<group>"; };
-		082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredientsData.swift; sourceTree = "<group>"; };
+		08200AF720BECF40004C22E5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		082AB2E720BB27D500F7349E /* BlockedIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedIngredients.swift; sourceTree = "<group>"; };
 		0836E13A20BDD3970084266C /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		0836E13C20BDD82F0084266C /* BarcodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeReaderViewController.swift; sourceTree = "<group>"; };
 		102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanWeEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +84,8 @@
 		082AB2E920BB27DC00F7349E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				082AB2E720BB27D500F7349E /* BlockedIngredientsData.swift */,
+				082AB2E720BB27D500F7349E /* BlockedIngredients.swift */,
+				08200AF720BECF40004C22E5 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,11 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				080B812B20BAEE3F00F38A71 /* HomeViewController.swift in Sources */,
-				082AB2E820BB27D500F7349E /* BlockedIngredientsData.swift in Sources */,
+				082AB2E820BB27D500F7349E /* BlockedIngredients.swift in Sources */,
 				0836E13D20BDD82F0084266C /* BarcodeReaderViewController.swift in Sources */,
 				080B812920BAEE3F00F38A71 /* AppDelegate.swift in Sources */,
 				0836E13B20BDD3970084266C /* ProductInfoViewController.swift in Sources */,
 				080B813D20BB12B400F38A71 /* BlockedIngredientsTableViewController.swift in Sources */,
+				08200AF820BECF40004C22E5 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

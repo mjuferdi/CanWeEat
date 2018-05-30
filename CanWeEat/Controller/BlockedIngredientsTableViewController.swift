@@ -16,7 +16,7 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
 
     @IBOutlet weak var searchBar: UISearchBar!
     let baseURL = "https://api.mjuan.info/product/haram"
-    var ingredientsData = BlockedIngredientsData()
+    var ingredientsData = BlockedIngredients()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
             if response.result.isSuccess {
                 print("Success! Got the blocked ingredients data")
                 //print(response)
-                let blockedIngredientsJSON : JSON = JSON(response.result.value!)
+                let blockedIngredientsJSON: JSON = JSON(response.result.value!)
                 self.updateBlockedIngredientsData(json: blockedIngredientsJSON)
                 
             } else {
