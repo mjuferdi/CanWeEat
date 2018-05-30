@@ -139,7 +139,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             if response.result.isSuccess {
                 print("Success! Got the product information")
                 let productInfoJSON: JSON = JSON(response.result.value!)
-                //print(productInfoJSON)
+                print(productInfoJSON)
                 self.updateProductInformation(json: productInfoJSON)
             } else {
                 print("Error: \(String(describing: response.result.error))")
@@ -155,7 +155,19 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             print(product.status)
             print(product.title)
             print(product.ingredient)
-        } else {
+            
+            if let haramIngredient = json["haramIngredient"].string {
+                product.haramIngredient = haramIngredient
+                print(product.haramIngredient)
+            }
+        }
+        else if let notAllowed = json["notAllowed"].bool {
+            product.notAllowed = notAllowed
+            if product.notAllowed == true {
+                print("You can't eat the product")
+            }
+        }
+        else {
             print("Information unavailable")
         }
     }

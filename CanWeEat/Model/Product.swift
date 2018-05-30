@@ -14,7 +14,7 @@ class Product {
     var ingredient: String = ""
     var ingredientCategory: String = ""
     var haramIngredient: String = ""
-    var notAllowed: Bool = true
+    var notAllowed: Bool = false
 //    
 //    init(productStatus: String, productTitle: String) {
 //        self.status = productStatus
