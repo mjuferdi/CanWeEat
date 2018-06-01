@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 import ChameleonFramework
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
@@ -120,6 +121,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             //print(trimmedCode)
             self.defaults.set(trimmedCode, forKey: "Barcode")
             self.navigationController?.popViewController(animated: true)
+            SVProgressHUD.show()
         }))
         
         self.present(alert, animated: true, completion: nil)

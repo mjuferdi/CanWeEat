@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 import ChameleonFramework
 
 class ProductInfoViewController: UIViewController {
@@ -32,15 +33,19 @@ class ProductInfoViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set("", forKey: "Barcode")
+        updateUILabel()
     }
     
     func isBarcodeAvailable() {
-        if let code = UserDefaults.standard.string(forKey: "Barcode") {
-            product.barcode = code
+        guard let code = UserDefaults.standard.string(forKey: "Barcode") else{fatalError()}
+        product.barcode = code
+
+        if product.barcode != "" {
             print(product.barcode)
             getProductInformation(url: baseUrl + product.barcode)
-        } else {
+        } else if product.barcode == "" {
             print("Barcode unavailable")
+            alertShowUp(title: "Please Scan", message: "To get the product information, please scan the barcode first. Click the button on the top corner.")
         }
     }
     
@@ -51,13 +56,12 @@ class ProductInfoViewController: UIViewController {
             if response.result.isSuccess {
                 print("Success! Got the product information")
                 let productInfoJSON: JSON = JSON(response.result.value!)
-                //print(productInfoJSON)
                 self.updateProductInformation(json: productInfoJSON)
+                SVProgressHUD.dismiss()
             } else {
                 print("Error: \(String(describing: response.result.error))")
-                let alert = UIAlertController(title: "Please Scan", message: "To get the product information, please scan the barcode first.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .destructive))
-                self.present(alert, animated: true)
+                self.alertShowUp(title: "No Internet Connection", message: "Please connect to the Internet to continue.")
+                SVProgressHUD.dismiss()
             }
         }
     }
@@ -101,6 +105,16 @@ class ProductInfoViewController: UIViewController {
         }
     }
     
+    // MARK: Update UI
+    
+    func updateUILabel() {
+        statusLabel?.text = ""
+        titleLabel?.text = ""
+        ingLabel?.text = ""
+        ingredientTextView?.text = ""
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+    }
+    
     func updateNavbar() {
         let img = UIImage()
         
@@ -112,5 +126,13 @@ class ProductInfoViewController: UIViewController {
         navBar.barTintColor = FlatOrange()
         navBar.tintColor = ContrastColorOf(FlatOrange(), returnFlat: true)
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: ContrastColorOf(FlatOrange(), returnFlat: true)]
+    }
+    
+    // MARK: Alert method for any error
+    
+    func alertShowUp(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+        self.present(alert, animated: true)
     }
 }

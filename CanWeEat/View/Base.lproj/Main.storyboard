@@ -160,10 +160,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4m3-ka-6l1">
-                                <rect key="frame" x="22" y="282" width="331" height="328"/>
+                                <rect key="frame" x="20" y="255" width="331" height="328"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -188,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="2117.5999999999999" y="413.3433283358321"/>
         </scene>
-        <!--Barcode Reader View Controller-->
+        <!--Scan Barcode-->
         <scene sceneID="9ns-kz-Wd3">
             <objects>
                 <viewController id="Shn-Mm-aKx" customClass="BarcodeReaderViewController" customModule="CanWeEat" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,6 +198,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oSu-Kk-hkq"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Scan Barcode" id="vyz-Gd-JQF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="FE1-aP-5i6"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2de-tF-73u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
