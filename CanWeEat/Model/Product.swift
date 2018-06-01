@@ -15,9 +15,5 @@ class Product {
     var ingredientCategory: String = ""
     var haramIngredient: String = ""
     var notAllowed: Bool = false
-//    
-//    init(productStatus: String, productTitle: String) {
-//        self.status = productStatus
-//        self.title = productTitle
-//    }
+    var barcode: String = ""
 }

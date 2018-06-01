@@ -12,11 +12,10 @@ import ChameleonFramework
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
-    let baseUrl = "https://api.mjuan.info/product/"
-
+    let defaults = UserDefaults.standard
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var productInfo = ProductInfoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,12 +114,11 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
         
         // Notif have found something
         let alert = UIAlertController(title: "Success read a barcode", message: code, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Get the product information", style: .default, handler: { action in
-            
+        alert.addAction(UIAlertAction(title: "Get Information", style: .destructive, handler: { action in
             // Remove the spaces
             let trimmedCode = code.trimmingCharacters(in: CharacterSet.whitespaces)
-            print(trimmedCode)
-            self.productInfo.getProductInformation(url: self.baseUrl + trimmedCode)
+            //print(trimmedCode)
+            self.defaults.set(trimmedCode, forKey: "Barcode")
             self.navigationController?.popViewController(animated: true)
         }))
         
@@ -130,8 +128,6 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    
     
     // MARK: Update navbar UI
     func updateNavbar() {

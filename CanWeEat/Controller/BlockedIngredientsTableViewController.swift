@@ -15,6 +15,7 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
 
 
     @IBOutlet weak var searchBar: UISearchBar!
+    
     let baseURL = "https://api.mjuan.info/product/haram"
     var ingredientsData = BlockedIngredients()
     
