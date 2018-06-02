@@ -160,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4m3-ka-6l1">
-                                <rect key="frame" x="20" y="255" width="331" height="328"/>
+                                <rect key="frame" x="22" y="270" width="331" height="328"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -195,16 +195,32 @@
                     <view key="view" contentMode="scaleToFill" id="ZdF-CG-j07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="DHV-up-3rH">
+                                <rect key="frame" x="37" y="185" width="300" height="296"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="296" id="vWD-Jr-2EE"/>
+                                    <constraint firstAttribute="width" constant="300" id="vlw-kh-2hM"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DHV-up-3rH" firstAttribute="centerY" secondItem="ZdF-CG-j07" secondAttribute="centerY" id="LbF-HD-9Pj"/>
+                            <constraint firstItem="DHV-up-3rH" firstAttribute="centerX" secondItem="ZdF-CG-j07" secondAttribute="centerX" id="RMg-WB-CZV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oSu-Kk-hkq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scan Barcode" id="vyz-Gd-JQF">
                         <barButtonItem key="backBarButtonItem" title=" " id="FE1-aP-5i6"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="squareImage" destination="DHV-up-3rH" id="G4S-nQ-qXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2de-tF-73u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="413"/>
+            <point key="canvasLocation" x="2868" y="412.44377811094455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rak-Jq-9e5">
@@ -230,5 +246,6 @@
     </scenes>
     <resources>
         <image name="bar-code" width="30" height="30"/>
+        <image name="square" width="300" height="296"/>
     </resources>
 </document>

@@ -57,6 +57,7 @@ class ProductInfoViewController: UIViewController {
                 print("Success! Got the product information")
                 let productInfoJSON: JSON = JSON(response.result.value!)
                 self.updateProductInformation(json: productInfoJSON)
+                print(productInfoJSON)
                 SVProgressHUD.dismiss()
             } else {
                 print("Error: \(String(describing: response.result.error))")
@@ -72,43 +73,59 @@ class ProductInfoViewController: UIViewController {
             product.title = json["title"].stringValue
             product.ingredient = json["ingredient"].stringValue
             
-            print(product.status)
-            
-            titleLabel?.text = product.title
-            statusLabel?.text = product.status.uppercased()
-            ingLabel?.text = "Ingredients:"
-            ingredientTextView?.text = product.ingredient
-            
-            if product.status == "hallal" {
-                statusLabel?.textColor = FlatGreen()
-            } else {
-                statusLabel?.textColor = FlatRed()
-            }
+            setLabelProductInfo()
             
             if let haramIngredient = json["haramIngredient"].string {
                 product.haramIngredient = haramIngredient
-                print(product.haramIngredient)
             }
         }
         else if let notAllowed = json["notAllowed"].bool {
             product.notAllowed = notAllowed
-            if product.notAllowed == true {
-                statusLabel?.text = "You can't eat the product"
-                statusLabel?.textColor = FlatRed()
-                titleLabel?.text = ""
-                ingLabel?.text = ""
-                ingredientTextView?.text = ""
-            }
+            setLabelNotAllowed()
+        }
+        else if let notFound = json["notFound"].bool{
+            product.notFound = notFound
+            setLabelNotFound()
         }
         else {
-            print("Information unavailable")
+            return
         }
     }
     
     // MARK: Update UI
     
+    func setLabelProductInfo() {
+        titleLabel?.text = product.title
+        statusLabel?.text = product.status.uppercased()
+        ingLabel?.text = "Ingredients:"
+        ingredientTextView?.text = product.ingredient
+        
+        if product.status == "hallal" {
+            statusLabel?.textColor = FlatGreen()
+        } else {
+            statusLabel?.textColor = FlatRed()
+        }
+    }
+    
+    func setLabelNotAllowed() {
+        if product.notAllowed == true {
+            statusLabel?.text = "Non-Edible Product"
+            titleLabel?.text = ""
+            ingLabel?.text = ""
+            ingredientTextView?.text = ""
+        }
+    }
+    
+    func setLabelNotFound() {
+        if product.notFound == true {
+            statusLabel?.text = "Products information unavailable"
+            statusLabel?.sizeToFit()
+        }
+    }
+    
     func updateUILabel() {
         statusLabel?.text = ""
+        statusLabel?.textColor = UIColor.black
         titleLabel?.text = ""
         ingLabel?.text = ""
         ingredientTextView?.text = ""

@@ -13,6 +13,7 @@ import ChameleonFramework
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    @IBOutlet weak var squareImage: UIImageView!
     let defaults = UserDefaults.standard
     
     var captureSession: AVCaptureSession!
@@ -65,6 +66,8 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
+        
+        self.view.bringSubview(toFront: squareImage)
         
         // Begin the capture session
         captureSession.startRunning()

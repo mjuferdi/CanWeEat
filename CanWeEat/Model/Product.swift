@@ -15,5 +15,6 @@ class Product {
     var ingredientCategory: String = ""
     var haramIngredient: String = ""
     var notAllowed: Bool = false
+    var notFound: Bool = false
     var barcode: String = ""
 }
