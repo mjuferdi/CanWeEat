@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -197,17 +198,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="DHV-up-3rH">
-                                <rect key="frame" x="37" y="185" width="300" height="296"/>
+                                <rect key="frame" x="51" y="273" width="272" height="121"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="296" id="vWD-Jr-2EE"/>
-                                    <constraint firstAttribute="width" constant="300" id="vlw-kh-2hM"/>
+                                    <constraint firstAttribute="width" secondItem="DHV-up-3rH" secondAttribute="height" multiplier="272:121" id="3T2-cF-cNT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DHV-up-3rH" firstAttribute="centerY" secondItem="ZdF-CG-j07" secondAttribute="centerY" id="LbF-HD-9Pj"/>
-                            <constraint firstItem="DHV-up-3rH" firstAttribute="centerX" secondItem="ZdF-CG-j07" secondAttribute="centerX" id="RMg-WB-CZV"/>
+                            <constraint firstItem="oSu-Kk-hkq" firstAttribute="bottom" secondItem="DHV-up-3rH" secondAttribute="bottom" constant="273" id="Keo-b6-6XL"/>
+                            <constraint firstItem="DHV-up-3rH" firstAttribute="leading" secondItem="oSu-Kk-hkq" secondAttribute="leading" constant="51" id="P7r-Sg-xbU"/>
+                            <constraint firstItem="DHV-up-3rH" firstAttribute="top" secondItem="oSu-Kk-hkq" secondAttribute="top" constant="209" id="ne1-JD-n5K"/>
+                            <constraint firstItem="oSu-Kk-hkq" firstAttribute="trailing" secondItem="DHV-up-3rH" secondAttribute="trailing" constant="52" id="zq4-Tr-FW4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oSu-Kk-hkq"/>
                     </view>
@@ -246,6 +248,6 @@
     </scenes>
     <resources>
         <image name="bar-code" width="30" height="30"/>
-        <image name="square" width="300" height="296"/>
+        <image name="square" width="273" height="122"/>
     </resources>
 </document>
