@@ -14,20 +14,20 @@ import ChameleonFramework
 
 class ProductInfoViewController: UIViewController {
 
-    let baseUrl = "https://api.mjuan.info/product/"
-    var product = Product()
+    var allowed: Bool = false
+    var found: Bool = false
     
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var ingLabel: UILabel?
     @IBOutlet weak var ingredientTextView: UITextView?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateNavbar()
+        settingNavbar()
         isBarcodeAvailable()
     }
     
@@ -38,12 +38,12 @@ class ProductInfoViewController: UIViewController {
     
     func isBarcodeAvailable() {
         guard let code = UserDefaults.standard.string(forKey: "Barcode") else{fatalError()}
-        product.barcode = code
-
-        if product.barcode != "" {
-            print(product.barcode)
-            getProductInformation(url: baseUrl + product.barcode)
-        } else if product.barcode == "" {
+        let url = URL()
+        let barcode = code
+        
+        if barcode != "" {
+            getProductInformation(url: url.baseURL + barcode)
+        } else if barcode == "" {
             print("Barcode unavailable")
             alertShowUp(title: "Please Scan", message: "To get the product information, please scan the barcode first. Click the button on the top corner.")
         }
@@ -57,7 +57,7 @@ class ProductInfoViewController: UIViewController {
                 print("Success! Got the product information")
                 let productInfoJSON: JSON = JSON(response.result.value!)
                 self.updateProductInformation(json: productInfoJSON)
-                print(productInfoJSON)
+                //print(productInfoJSON)
                 SVProgressHUD.dismiss()
             } else {
                 print("Error: \(String(describing: response.result.error))")
@@ -68,24 +68,23 @@ class ProductInfoViewController: UIViewController {
     }
     
     func updateProductInformation(json: JSON) {
-        if let productInfo = json["status"].string {
-            product.status = productInfo
-            product.title = json["title"].stringValue
-            product.ingredient = json["ingredient"].stringValue
-            
-            setLabelProductInfo()
+        if let productStatus = json["status"].string {
+            let title = json["title"].stringValue
+            let ingredients = json["ingredient"].stringValue
+            let productInfo = Product(productStatus: productStatus, productTitle: title, productIngredient: ingredients)
+            setLabelProductInfo(status: productInfo.status , title: productInfo.title, ingredients: productInfo.ingredient)
             
             if let haramIngredient = json["haramIngredient"].string {
-                product.haramIngredient = haramIngredient
+                //product.haramIngredient = haramIngredient
             }
         }
         else if let notAllowed = json["notAllowed"].bool {
-            product.notAllowed = notAllowed
-            setLabelNotAllowed()
+            allowed = notAllowed
+            setLabelNotAllowed(allowed: notAllowed)
         }
         else if let notFound = json["notFound"].bool{
-            product.notFound = notFound
-            setLabelNotFound()
+            found = notFound
+            setLabelNotFound(found: notFound)
         }
         else {
             return
@@ -94,35 +93,33 @@ class ProductInfoViewController: UIViewController {
     
     // MARK: Update UI
     
-    func setLabelProductInfo() {
-        titleLabel?.text = product.title
-        statusLabel?.text = product.status.uppercased()
+    func setLabelProductInfo(status: String, title: String, ingredients: String) {
+        titleLabel?.text = title
         ingLabel?.text = "Ingredients:"
-        ingredientTextView?.text = product.ingredient
-        
-        if product.status == "hallal" {
+        ingredientTextView?.text = ingredients
+
+        if status == "hallal" {
+            statusLabel?.text = "Yes, you can consume it :)"
             statusLabel?.textColor = FlatGreen()
         } else {
+            statusLabel?.text = "No, you can not consume it :("
             statusLabel?.textColor = FlatRed()
         }
     }
     
-    func setLabelNotAllowed() {
-        if product.notAllowed == true {
+    func setLabelNotAllowed(allowed: Bool) {
+        if allowed == true {
             statusLabel?.text = "Non-Edible Product"
-            titleLabel?.text = ""
-            ingLabel?.text = ""
-            ingredientTextView?.text = ""
         }
     }
     
-    func setLabelNotFound() {
-        if product.notFound == true {
+    func setLabelNotFound(found: Bool) {
+        if found == true {
             statusLabel?.text = "Products information unavailable"
-            statusLabel?.sizeToFit()
         }
     }
     
+    // Set UILabel to default
     func updateUILabel() {
         statusLabel?.text = ""
         statusLabel?.textColor = UIColor.black
@@ -132,7 +129,7 @@ class ProductInfoViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
-    func updateNavbar() {
+    func settingNavbar() {
         let img = UIImage()
         
         guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller does not exist")}

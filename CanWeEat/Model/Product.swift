@@ -9,12 +9,15 @@
 import Foundation
 
 class Product {
+
     var status: String = ""
     var title: String = ""
     var ingredient: String = ""
-    var ingredientCategory: String = ""
-    var haramIngredient: String = ""
-    var notAllowed: Bool = false
-    var notFound: Bool = false
-    var barcode: String = ""
+    
+    init(productStatus: String, productTitle: String, productIngredient: String) {
+        self.status = productStatus
+        self.title = productTitle
+        self.ingredient = productIngredient
+    }
+    
 }

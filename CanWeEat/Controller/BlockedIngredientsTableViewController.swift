@@ -16,12 +16,13 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let baseURL = "https://api.mjuan.info/product/haram"
     var ingredientsData = BlockedIngredients()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getBlockedIngredients(url: baseURL)
+        
+        let url = URL()
+        getBlockedIngredients(url: url.baseURL + "haram")
         tableView.separatorStyle = .none
         searchBar.delegate = self
     }
@@ -30,13 +31,14 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
         updateNavbar()
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredientsData.filteredData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath)
-        cell.textLabel?.text = ingredientsData.filteredData[indexPath.row]
+        cell.textLabel?.text = ingredientsData.filteredData[indexPath.row].capitalized
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         return cell

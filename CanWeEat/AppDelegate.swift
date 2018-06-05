@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UserDefaults.standard.set("", forKey: "Barcode")
         
+        
         return true
     }
 
