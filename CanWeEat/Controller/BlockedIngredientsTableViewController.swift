@@ -69,6 +69,9 @@ class BlockedIngredientsTableViewController: UITableViewController, UISearchBarD
                 
             } else {
                 print("Errorr:  \(String(describing: response.result.error))")
+                let alert = UIAlertController(title: "No Internet Connection", message: "Please connect to the Internet to continue.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive))
+                self.present(alert, animated: true)
             }
         }
     }
