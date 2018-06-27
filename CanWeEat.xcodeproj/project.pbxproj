@@ -18,6 +18,7 @@
 		0836E13B20BDD3970084266C /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0836E13A20BDD3970084266C /* ProductInfoViewController.swift */; };
 		0836E13D20BDD82F0084266C /* BarcodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0836E13C20BDD82F0084266C /* BarcodeReaderViewController.swift */; };
 		0887FEE820C74D9E00EB35F7 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887FEE720C74D9E00EB35F7 /* URL.swift */; };
+		08963E2520DABA8900DB41CC /* Delicious Adventures.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08963E2420DABA8800DB41CC /* Delicious Adventures.ttf */; };
 		47F9E3B8EEBC47AA905B073C /* Pods_CanWeEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		0836E13A20BDD3970084266C /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		0836E13C20BDD82F0084266C /* BarcodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeReaderViewController.swift; sourceTree = "<group>"; };
 		0887FEE720C74D9E00EB35F7 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		08963E2420DABA8800DB41CC /* Delicious Adventures.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delicious Adventures.ttf"; sourceTree = "<group>"; };
 		102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanWeEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat.release.xcconfig"; sourceTree = "<group>"; };
 		CE903EFE03FBD5929D18E301 /* Pods-CanWeEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanWeEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanWeEat/Pods-CanWeEat.debug.xcconfig"; sourceTree = "<group>"; };
 		EDE97897E1C8877FA3349EA0 /* Pods_CanWeEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanWeEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 			children = (
 				080B812F20BAEE4100F38A71 /* Assets.xcassets */,
 				080B813120BAEE4100F38A71 /* LaunchScreen.storyboard */,
+				08963E2420DABA8800DB41CC /* Delicious Adventures.ttf */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				080B813320BAEE4100F38A71 /* LaunchScreen.storyboard in Resources */,
 				080B813020BAEE4100F38A71 /* Assets.xcassets in Resources */,
+				08963E2520DABA8900DB41CC /* Delicious Adventures.ttf in Resources */,
 				080B812E20BAEE3F00F38A71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -408,15 +412,18 @@
 			baseConfigurationReference = CE903EFE03FBD5929D18E301 /* Pods-CanWeEat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZDFPF5YK4;
+				DEVELOPMENT_TEAM = TH5QU6LRUF;
 				INFOPLIST_FILE = CanWeEat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mar.CanWeEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -427,15 +434,18 @@
 			baseConfigurationReference = 102E5DA2D905286E990226B5 /* Pods-CanWeEat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZDFPF5YK4;
+				DEVELOPMENT_TEAM = TH5QU6LRUF;
 				INFOPLIST_FILE = CanWeEat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mar.CanWeEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -9,5 +9,5 @@
 import Foundation
 
 class URL {
-    var baseURL: String = "https://api.mjuan.info/product/"
+    let baseURL: String = "https://api.mjuan.info/product/"
 }
