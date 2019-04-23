@@ -3,6 +3,9 @@
 A simple barcode scanner app built in Swift 4 in iOS 11. Scan the barcode of the product
 with smartphone or tablet to get information about the products ingredients.
 
+![github](https://user-images.githubusercontent.com/19746283/56594232-c303bc80-65ec-11e9-9e2a-ed5fae0bd33b.png)
+
+
 ## Built With
 
 *  Swift 4.0
