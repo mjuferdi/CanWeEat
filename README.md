@@ -1,4 +1,4 @@
-# ToeDoe
+# CanWeEat
 
 A simple barcode scanner app built in Swift 4 in iOS 11. Scan the barcode of the product
 with smartphone or tablet to get information about the products ingredients.
